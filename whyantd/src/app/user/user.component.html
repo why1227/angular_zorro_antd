@@ -1,0 +1,42 @@
+<h1>User</h1>
+
+
+<div class="form_input">
+  <ul class="input_list">
+    <li>
+      姓名：<input nz-input placeholder="请输入姓名" [(ngModel)]="input_data.user_name" />
+    </li>
+    <li>
+      年龄：<input nz-input placeholder="请输入年龄" [(ngModel)]="input_data.age" />
+    </li>
+    <li>
+      性别：
+      <nz-radio-group [(ngModel)]="input_data.sex">
+        <label nz-radio nzValue="男">男</label>
+        <label nz-radio nzValue="女">女</label>
+      </nz-radio-group>
+    </li>
+    <li>
+      爱好：
+      <nz-checkbox-group [(ngModel)]="input_data.hobby"></nz-checkbox-group>
+    </li>
+    <li>
+      等级：
+      <nz-select nzShowSearch nzAllowClear nzPlaceHolder="选择等级" [(ngModel)]="input_data.level">
+        <nz-option nzValue="VIP1" nzLabel="VIP1"></nz-option>
+        <nz-option nzValue="VIP2" nzLabel="VIP2"></nz-option>
+        <nz-option nzValue="VIP3" nzLabel="VIP3"></nz-option>
+        <nz-option nzValue="SVIP" nzLabel="SVIP" nzDisabled></nz-option>
+
+      </nz-select>
+    </li>
+    <li>
+      生日：
+      <nz-date-picker [(ngModel)]="input_data.birthday"></nz-date-picker>
+    </li>
+  </ul>
+</div>
+
+<button nz-button [nzType]="'primary'" (click)="doSubmit()">
+  <span>提交</span>
+</button>
